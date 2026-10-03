@@ -1,0 +1,4 @@
+firmware/arcanjos_nfc/config.h
+.env
+*.log
+.DS_Store

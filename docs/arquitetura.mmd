@@ -1,0 +1,9 @@
+flowchart LR
+  T[Tag RFID/NFC compatível] -->|aproximação| R[M5Stack RFID2]
+  R -->|I2C / UID| A[AtomS3 Lite / ESP32-S3]
+  A -->|decisão local / GPIO a confirmar| L[M5Stack Actuator Relay]
+  A -->|Wi-Fi / MQTT / JSON| E[EMQX]
+  E --> Q[Rule Engine]
+  Q -->|ação MySQL| D[(MySQL)]
+  D --> V[DBeaver / consulta]
+  V -.->|exportação manual JSON| W[Aplicação web / visualização]
